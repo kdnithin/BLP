@@ -97,11 +97,11 @@ $(function () {
       }
     })
 
-  wrapper.append(close)
-  wrapper.append(link)
-  wrapper.append(btn)
+  //wrapper.append(close)
+  //wrapper.append(link)
+  //wrapper.append(btn)
 
-  $('.content-wrapper').prepend(wrapper)
+ // $('.content-wrapper').prepend(wrapper)
 
   wrapper.hide(4).delay(500).slideDown()
 });
