@@ -1,9 +1,10 @@
 import React from 'react'
-import EventList from './EventList'
+import VisibleEventList from '../containers/VisibleEventList'
 
 const App = () => (
   <div>
-    <EventList />
+        <VisibleEventList />
+       
   </div>
 )
 

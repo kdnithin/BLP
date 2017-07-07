@@ -1,27 +1,16 @@
 import Event  from './Event'
-import { connect } from 'react-redux'
 import React from 'react'
-import {RegisterCourse}  from '../actions'
-
-let EventList=(props)=>
-(
-  <div>
-        {props.state.map(event => (
-          <Event key={event.id} {...event} onClick={()=>props.registerOnClick(event.id)} />
-        ))}
-         
-        </div>
+let EventList=(eventListsall)=>
+    (
+        
+            <ul className="users-list clearfix">
+           
+                {eventListsall.state.map(event => (
+                    <Event key={event.id} {...event} />
+                ))}
+              
+            </ul>
+      
 )
-const mapStateToProps = state => {
-  return {
-   state
-  }
-}
 
-const mapDispatchToProps = (dispatch) =>
-{
-   return {
-   registerOnClick: (id) => {dispatch(RegisterCourse(id));}
-  };
-}
-export default connect(mapStateToProps,mapDispatchToProps)(EventList)
+export default EventList

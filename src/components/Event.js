@@ -1,19 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Button from './Button'
-
-//var registerButton;
 
 const Event = (props) => (
-  <div>
-    <img width="75" src={props.topicImagePath}/>
-    {props.topic}
-    {props.presenterName}
-    {props.description}
-    {props.eventDate}
-    <Button clickingProps={props.onClick} eventID = {props.Id} label = {props.registered? "UnRegister" : "Register"}/>
-    </div>
- 
+    
+        <li>
+            <img className="online" width="75" src={props.topicImagePath} />
+            <a className="users-list-name" href="#"> {props.presenterName}</a>
+            <span className="users-list-date">{props.topic}-{props.description}-{props.eventDate}</span>
+    
+    </li>
+      
+       
+   
 )
 
 Event.propTypes = {
