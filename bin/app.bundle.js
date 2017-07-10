@@ -24784,9 +24784,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var _reactRedux = __webpack_require__(86);
 
-var _EventList = __webpack_require__(228);
+var _LoanReqForm = __webpack_require__(228);
 
-var _EventList2 = _interopRequireDefault(_EventList);
+var _LoanReqForm2 = _interopRequireDefault(_LoanReqForm);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24796,7 +24796,7 @@ var MapStateToProps = function MapStateToProps(state) {
     };
 };
 
-var VisibleEventList = (0, _reactRedux.connect)(MapStateToProps)(_EventList2.default);
+var VisibleEventList = (0, _reactRedux.connect)(MapStateToProps)(_LoanReqForm2.default);
 
 exports.default = VisibleEventList;
 
@@ -24811,8 +24811,6 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _Event = __webpack_require__(229);
 
 var _Event2 = _interopRequireDefault(_Event);
@@ -24823,17 +24821,124 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var EventList = function EventList(eventListsall) {
+var LoanReqForm = function LoanReqForm(eventListsall) {
     return _react2.default.createElement(
-        'ul',
-        { className: 'users-list clearfix' },
-        eventListsall.state.map(function (event) {
-            return _react2.default.createElement(_Event2.default, _extends({ key: event.id }, event));
-        })
+        'div',
+        { className: 'box-body' },
+        _react2.default.createElement(
+            'div',
+            { className: 'form-group' },
+            _react2.default.createElement(
+                'label',
+                { 'for': 'exampleInputEmail1' },
+                'Loan Amount'
+            ),
+            _react2.default.createElement('input', { className: 'form-control', id: 'loan_amnt', placeholder: 'Loan Amount' })
+        ),
+        _react2.default.createElement(
+            'div',
+            { className: 'form-group' },
+            _react2.default.createElement(
+                'label',
+                { 'for': 'exampleInputPassword1' },
+                'Term(Months)'
+            ),
+            _react2.default.createElement('input', { className: 'form-control', id: 'term', placeholder: 'Time of repayment in months' })
+        ),
+        _react2.default.createElement(
+            'div',
+            { className: 'form-group' },
+            _react2.default.createElement(
+                'label',
+                { 'for': 'exampleInputEmail1' },
+                'Employment Duration'
+            ),
+            _react2.default.createElement('input', { className: 'form-control', id: 'emp_length', placeholder: 'Employment in Years' })
+        ),
+        _react2.default.createElement(
+            'div',
+            { className: 'form-group' },
+            _react2.default.createElement(
+                'label',
+                { 'for': 'exampleInputEmail1' },
+                'Home OwnerShip'
+            ),
+            _react2.default.createElement('input', { className: 'form-control', id: 'home_ownership', placeholder: 'Home Ownership' })
+        ),
+        _react2.default.createElement(
+            'div',
+            { className: 'form-group' },
+            _react2.default.createElement(
+                'label',
+                { 'for': 'exampleInputEmail1' },
+                'Annual Income'
+            ),
+            _react2.default.createElement('input', { className: 'form-control', id: 'annual_inc', placeholder: 'Annual Salary of the borrower in Dollars', type: 'email' })
+        ),
+        _react2.default.createElement(
+            'div',
+            { className: 'form-group' },
+            _react2.default.createElement(
+                'label',
+                { 'for': 'exampleInputEmail1' },
+                'Loan Purpose'
+            ),
+            _react2.default.createElement('input', { className: 'form-control', id: 'purpose', placeholder: 'Purpose of the Loan', type: 'email' })
+        ),
+        _react2.default.createElement(
+            'div',
+            { className: 'form-group' },
+            _react2.default.createElement(
+                'label',
+                { 'for': 'exampleInputEmail1' },
+                'State'
+            ),
+            _react2.default.createElement('input', { className: 'form-control', id: 'addr_state', placeholder: 'Location of the borrower', type: 'email' })
+        ),
+        _react2.default.createElement(
+            'div',
+            { className: 'form-group' },
+            _react2.default.createElement(
+                'label',
+                { 'for': 'exampleInputEmail1' },
+                'Debt-to-Income'
+            ),
+            _react2.default.createElement('input', { className: 'form-control', id: 'dti', placeholder: 'Debt-to-Income ratio of the borrower', type: 'email' })
+        ),
+        _react2.default.createElement(
+            'div',
+            { className: 'form-group' },
+            _react2.default.createElement(
+                'label',
+                { 'for': 'exampleInputEmail1' },
+                'Dues'
+            ),
+            _react2.default.createElement('input', { className: 'form-control', id: 'delinq_2yrs', placeholder: 'The number of time the borrower had been 30+ days past due on a payment in the past 2 years' })
+        ),
+        _react2.default.createElement(
+            'div',
+            { className: 'form-group' },
+            _react2.default.createElement(
+                'label',
+                { 'for': 'exampleInputEmail1' },
+                'revolving line utl rate'
+            ),
+            _react2.default.createElement('input', { className: 'form-control', id: 'revol_util', placeholder: 'Borrower\'s revolving line utilization rate' })
+        ),
+        _react2.default.createElement(
+            'div',
+            { className: 'form-group' },
+            _react2.default.createElement(
+                'label',
+                { 'for': 'exampleInputEmail1' },
+                'Bad Loan'
+            ),
+            _react2.default.createElement('input', { className: 'form-control', id: 'bad_loan', placeholder: 'Bad Loan' })
+        )
     );
 };
 
-exports.default = EventList;
+exports.default = LoanReqForm;
 
 /***/ }),
 /* 229 */

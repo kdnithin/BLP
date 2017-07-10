@@ -1,6 +1,6 @@
 
 import { connect } from 'react-redux'
-import EventList from '../components/EventList'
+import LoanReqForm from '../components/LoanReqForm'
 
 const MapStateToProps = state => {
     return {
@@ -10,7 +10,7 @@ const MapStateToProps = state => {
 
 const VisibleEventList = connect(
     MapStateToProps
-)(EventList)
+)(LoanReqForm)
 
 
 export default VisibleEventList
