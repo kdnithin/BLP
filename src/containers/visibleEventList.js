@@ -1,6 +1,8 @@
 
 import { connect } from 'react-redux'
 import LoanReqForm from '../components/LoanReqForm'
+import {RegisterCourse} from '../actions'
+
 
 const MapStateToProps = state => {
     return {
@@ -8,8 +10,15 @@ const MapStateToProps = state => {
     }
 }
 
+const mapDispatchToProps = (dispatch) =>
+{
+   return {
+   registerOnClick: (values) => {dispatch(RegisterCourse(values));}
+  };
+}
+
 const VisibleEventList = connect(
-    MapStateToProps
+    MapStateToProps,mapDispatchToProps
 )(LoanReqForm)
 
 

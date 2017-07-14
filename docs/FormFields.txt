@@ -1,12 +1,26 @@
 Data Set Fields
  ? loan_amnt : Loan amount applied for.
- ? term     : Time for repayment in Months 
-? emp_length : Employemnt in Years
- ? home_ownership : Ownership Type (’mortgage’, ’own’,’rent’,’none’)
- ? annual_inc :  Annual Salary of the borrower in dollars 
-? purpose : The purpose of the loan 
-? addr_state : Location of the borrower
- ? dti :  The debt-to-income ratio of the borrower
- ? delinq_2yrs  : The number of times the borrower had been 30+ days past due on a payment in the past 2 years 
-? revol_util : The borrower's revolving line utilization rate
-? bad_loan : 1 -  Good loan, 0 - BadLoan
+ ? 
+term     : Time for repayment in Months 
+?
+ emp_length : Employemnt in Years
+ ?
+ home_ownership : Ownership Type (’mortgage’, ’own’,’rent’,’none’)
+ ?
+ annual_inc :  Annual Salary of the borrower in dollars 
+?
+ purpose : The purpose of the loan 
+?
+ addr_state : Location of the borrower
+ ? 
+dti :  The debt-to-income ratio of the borrower
+ ?
+ delinq_2yrs  : The number of times the borrower had been 30+ days past due on a payment in the past 2 years 
+?
+ revol_util : The borrower's revolving line utilization rate
+?
+ bad_loan : 1 -  Good loan, 0 - BadLoan
+
+
+
+ IMPS00031916872
