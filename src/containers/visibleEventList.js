@@ -13,7 +13,7 @@ const MapStateToProps = state => {
 const mapDispatchToProps = (dispatch) =>
 {
    return {
-   registerOnClick: (values) => {dispatch(RegisterCourse(values));}
+   registerOnClick: (values,valuesterm) => {dispatch(RegisterCourse(values,valuesterm));}
   };
 }
 

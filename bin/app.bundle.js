@@ -24729,7 +24729,9 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var events = [{ loan_amnt: 2500 }];
+var events = [{ loan_amnt: 2500,
+  loan_terms: 50
+}];
 
 var evenLists = function evenLists() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : events;
@@ -24738,8 +24740,10 @@ var evenLists = function evenLists() {
   switch (action.type) {
     case 'CHECK':
       return Object.assign({}, state, {
-        loan_amnt: action.amount
+        loan_amnt: action.amount,
+        loan_terms: action.term
       });
+
     default:
       return state;
   }
@@ -24807,8 +24811,8 @@ var MapStateToProps = function MapStateToProps(state) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     return {
-        registerOnClick: function registerOnClick(values) {
-            dispatch((0, _actions.RegisterCourse)(values));
+        registerOnClick: function registerOnClick(values, valuesterm) {
+            dispatch((0, _actions.RegisterCourse)(values, valuesterm));
         }
     };
 };
@@ -24838,133 +24842,144 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var loan_amount = void 0;
+var loan_term = void 0;
 var LoanReqForm = function LoanReqForm(props) {
     return _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(
-            'div',
-            { className: 'box-body' },
+            'form',
+            { role: 'form' },
             _react2.default.createElement(
                 'div',
-                { className: 'form-group' },
+                { className: 'box-body' },
                 _react2.default.createElement(
-                    'label',
-                    null,
-                    'Loan Amount'
+                    'div',
+                    { className: 'form-group' },
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'Loan Amount'
+                    ),
+                    _react2.default.createElement('input', { className: 'form-control',
+                        ref: function ref(node) {
+                            loan_amount = node;
+                        }, placeholder: 'Loan Amount' })
                 ),
-                _react2.default.createElement('input', { className: 'form-control', id: 'loan_amnt', placeholder: 'Loan Amount' })
+                _react2.default.createElement(
+                    'div',
+                    { className: 'form-group' },
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'Term(Months)'
+                    ),
+                    _react2.default.createElement('input', { className: 'form-control', ref: function ref(node) {
+                            loan_term = node;
+                        }, placeholder: 'Time of repayment in months' })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'form-group' },
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'Employment Duration'
+                    ),
+                    _react2.default.createElement('input', { className: 'form-control', id: 'emp_length', placeholder: 'Employment in Years' })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'form-group' },
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'Home OwnerShip'
+                    ),
+                    _react2.default.createElement('input', { className: 'form-control', id: 'home_ownership', placeholder: 'Home Ownership' })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'form-group' },
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'Annual Income'
+                    ),
+                    _react2.default.createElement('input', { className: 'form-control', id: 'annual_inc', placeholder: 'Annual Salary of the borrower in Dollars', type: 'email' })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'form-group' },
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'Loan Purpose'
+                    ),
+                    _react2.default.createElement('input', { className: 'form-control', id: 'purpose', placeholder: 'Purpose of the Loan', type: 'email' })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'form-group' },
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'State'
+                    ),
+                    _react2.default.createElement('input', { className: 'form-control', id: 'addr_state', placeholder: 'Location of the borrower', type: 'email' })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'form-group' },
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'Debt-to-Income'
+                    ),
+                    _react2.default.createElement('input', { className: 'form-control', id: 'dti', placeholder: 'Debt-to-Income ratio of the borrower', type: 'email' })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'form-group' },
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'Dues'
+                    ),
+                    _react2.default.createElement('input', { className: 'form-control', id: 'delinq_2yrs', placeholder: 'The number of time the borrower had been 30+ days past due on a payment in the past 2 years' })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'form-group' },
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'revolving line utl rate'
+                    ),
+                    _react2.default.createElement('input', { className: 'form-control', id: 'revol_util', placeholder: 'Borrower\'s revolving line utilization rate' })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'form-group' },
+                    _react2.default.createElement(
+                        'label',
+                        null,
+                        'Bad Loan'
+                    ),
+                    _react2.default.createElement('input', { className: 'form-control', id: 'bad_loan', placeholder: 'Bad Loan' })
+                )
             ),
             _react2.default.createElement(
                 'div',
-                { className: 'form-group' },
+                { className: 'box-footer' },
                 _react2.default.createElement(
-                    'label',
-                    null,
-                    'Term(Months)'
-                ),
-                _react2.default.createElement('input', { className: 'form-control', id: 'term', placeholder: 'Time of repayment in months' })
-            ),
-            _react2.default.createElement(
-                'div',
-                { className: 'form-group' },
-                _react2.default.createElement(
-                    'label',
-                    null,
-                    'Employment Duration'
-                ),
-                _react2.default.createElement('input', { className: 'form-control', id: 'emp_length', placeholder: 'Employment in Years' })
-            ),
-            _react2.default.createElement(
-                'div',
-                { className: 'form-group' },
-                _react2.default.createElement(
-                    'label',
-                    null,
-                    'Home OwnerShip'
-                ),
-                _react2.default.createElement('input', { className: 'form-control', id: 'home_ownership', placeholder: 'Home Ownership' })
-            ),
-            _react2.default.createElement(
-                'div',
-                { className: 'form-group' },
-                _react2.default.createElement(
-                    'label',
-                    null,
-                    'Annual Income'
-                ),
-                _react2.default.createElement('input', { className: 'form-control', id: 'annual_inc', placeholder: 'Annual Salary of the borrower in Dollars', type: 'email' })
-            ),
-            _react2.default.createElement(
-                'div',
-                { className: 'form-group' },
-                _react2.default.createElement(
-                    'label',
-                    null,
-                    'Loan Purpose'
-                ),
-                _react2.default.createElement('input', { className: 'form-control', id: 'purpose', placeholder: 'Purpose of the Loan', type: 'email' })
-            ),
-            _react2.default.createElement(
-                'div',
-                { className: 'form-group' },
-                _react2.default.createElement(
-                    'label',
-                    null,
-                    'State'
-                ),
-                _react2.default.createElement('input', { className: 'form-control', id: 'addr_state', placeholder: 'Location of the borrower', type: 'email' })
-            ),
-            _react2.default.createElement(
-                'div',
-                { className: 'form-group' },
-                _react2.default.createElement(
-                    'label',
-                    null,
-                    'Debt-to-Income'
-                ),
-                _react2.default.createElement('input', { className: 'form-control', id: 'dti', placeholder: 'Debt-to-Income ratio of the borrower', type: 'email' })
-            ),
-            _react2.default.createElement(
-                'div',
-                { className: 'form-group' },
-                _react2.default.createElement(
-                    'label',
-                    null,
-                    'Dues'
-                ),
-                _react2.default.createElement('input', { className: 'form-control', id: 'delinq_2yrs', placeholder: 'The number of time the borrower had been 30+ days past due on a payment in the past 2 years' })
-            ),
-            _react2.default.createElement(
-                'div',
-                { className: 'form-group' },
-                _react2.default.createElement(
-                    'label',
-                    null,
-                    'revolving line utl rate'
-                ),
-                _react2.default.createElement('input', { className: 'form-control', id: 'revol_util', placeholder: 'Borrower\'s revolving line utilization rate' })
-            ),
-            _react2.default.createElement(
-                'div',
-                { className: 'form-group' },
-                _react2.default.createElement(
-                    'label',
-                    null,
-                    'Bad Loan'
-                ),
-                _react2.default.createElement('input', { className: 'form-control', id: 'bad_loan', placeholder: 'Bad Loan' })
-            )
-        ),
-        _react2.default.createElement(
-            'div',
-            { className: 'box-footer' },
-            _react2.default.createElement(
-                'button',
-                { type: 'submit', className: 'btn btn-primary', onClick: function onClick() {
-                        return props.registerOnClick(undefined);
-                    } },
-                'Submit'
+                    'button',
+                    { className: 'btn btn-primary', onClick: function onClick() {
+                            return props.registerOnClick(loan_amount.value, loan_term.value);
+                        } },
+                    'Submit'
+                )
             )
         )
     );
@@ -24989,10 +25004,13 @@ exports.default = LoanReqForm;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var RegisterCourse = exports.RegisterCourse = function RegisterCourse(values) {
+var RegisterCourse = exports.RegisterCourse = function RegisterCourse(values, valuesterm) {
+  var myamnt = values;
+  var myterm = valuesterm;
   return {
     type: 'CHECK',
-    amount: values.refs.loan_amnt.value
+    amount: myamnt,
+    term: myterm
   };
 };
 

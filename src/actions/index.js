@@ -1,6 +1,9 @@
-export const RegisterCourse = (values) => {
+export const RegisterCourse = (values,valuesterm) => {
+  let myamnt = values;
+   let myterm = valuesterm;
   return {
     type: 'CHECK',
-    amount:values.refs.loan_amnt.value
+    amount:myamnt,
+    term:myterm
   };
 };

@@ -1,20 +1,28 @@
 import Event  from './Event'
 import React from 'react'
+let loan_amount
+let loan_term
 let LoanReqForm=(props)=>
     (
         <div>
+            <form role="form">
                                 <div className="box-body">
                                     <div className="form-group">
                                         <label >Loan Amount</label>
-                                        <input className="form-control"  id="loan_amnt" placeholder="Loan Amount" ></input>
+                                        <input className="form-control"
+                                         ref = {(node)=>{
+                                              loan_amount=node
+                                        } }placeholder="Loan Amount" ></input>
                                     </div>
                                     <div className="form-group">
                                         <label >Term(Months)</label>
-                                        <input className="form-control" id="term" placeholder="Time of repayment in months" ></input>
+                                        <input className="form-control"  ref = {(node)=>{
+                                              loan_term=node
+                                        } } placeholder="Time of repayment in months" ></input>
                                     </div>
                                     <div className="form-group">
                                         <label >Employment Duration</label>
-                                        <input className="form-control" id="emp_length" placeholder="Employment in Years" ></input>
+                                        <input className="form-control"  id="emp_length" placeholder="Employment in Years" ></input>
                                     </div>
                                      <div className="form-group">
                                         <label >Home OwnerShip</label>
@@ -51,8 +59,10 @@ let LoanReqForm=(props)=>
                                 </div>     
                                 
                                 <div className="box-footer">
-                                    <button type="submit" className="btn btn-primary" onClick={()=>props.registerOnClick(this)} >Submit</button>
+                                    <button  className="btn btn-primary" onClick={()=>props.registerOnClick(loan_amount.value,loan_term.value)} >Submit</button>
                                 </div>   
+                               
+                                  </form>
         </div>  
            
 )
